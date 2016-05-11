@@ -1,0 +1,80 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>locals-page Demo</title>
+    <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="../locals-page.html">
+    <link rel="import" href="../../neon-animation/neon-animated-pages.html">
+    <link rel="import" href="../../iron-pages/iron-pages.html">
+
+<style type="text/css">
+.classy {
+  display: block;
+  border: 1px solid green;
+/*  height: 20vh;
+  min-height: 100px;*/
+}
+
+  neon-animated-pages {
+    height: 100%;
+  }
+</style>
+
+
+  </head>
+  <body unresolved>
+<template is="dom-bind" id="app">
+
+<div class="classy">
+  <neon-animated-pages id="pages1" selected="0">
+    <locals-page>
+      <h2 on-tap="gonext">Hello locals-page 1</h2>
+    </locals-page>
+    <locals-page>
+      <h2>Hello locals-page 2</h2>
+    </locals-page>
+  </neon-animated-pages>
+</div>
+
+
+<!-- <div class="classy">
+
+  <neon-animated-pages id="pages2" selected="0">
+    <locals-page>
+      <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent diam lectus, sollicitudin eget convallis non, consectetur ut leo.</h2>
+    </locals-page>
+    <locals-page>
+      <h2>Hello locals-page 2 tweede blokje</h2>
+    </locals-page>
+  </neon-animated-pages>
+</div> -->
+</template>
+<script>
+
+(function(document) {
+      'use strict';
+      var app = document.querySelector('#app');
+
+      app.gonext = function(){
+        app.$.pages1.selected = 1;
+      }
+
+
+    })(document);  
+
+
+
+</script>
+  </body>
+</html>

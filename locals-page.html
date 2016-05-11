@@ -1,0 +1,84 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../neon-animation/neon-animatable-behavior.html">
+<link rel="import" href="../neon-animation/neon-animations.html">
+
+<!--
+An element providing a solution to no problem in particular.
+
+Example:
+
+    <locals-page></locals-page>
+
+Example:
+
+    <locals-page>
+      <h2>Hello locals-page</h2>
+    </locals-page>
+
+@demo demo/index.html
+@hero hero.svg
+-->
+
+<dom-module id="locals-page">
+  <template>
+    <style>
+      :host {
+        display: block;
+        box-sizing:border-box;
+        padding: 0px;
+        margin: 0px; 
+      }
+
+
+
+    </style>
+
+    <content></content>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'locals-page',
+
+   behaviors: [
+      Polymer.NeonAnimatableBehavior,
+    ],
+
+      properties: {
+        entryAnimation : {
+          value: 'slide-from-left-animation'
+        },
+
+        exitAnimation : {
+          value: 'slide-right-animation'
+        },
+      // animationConfig: { 
+      //     value: function(){
+      //       return {
+      //         'entry': {
+      //           name: 'slide-from-left-animation',
+      //           toPage: this
+      //         },
+      //         'exit': {
+      //           name: 'slide-right-animation',
+      //           fromPage: this
+      //         }
+      //       }
+      //     }
+      //   },
+
+      },
+
+    });
+  </script>
+</dom-module>
